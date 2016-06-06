@@ -8,21 +8,15 @@
  * @return The range with a separator.
  * @customfunction
  */
+
 function joinIf(range, separator, cond) {
-  
-  result = "";
-  arr = range;
-  
-  i=0
-  while (i < arr.length) {
-    
-    if ((arr[i] != 0) && (cond[i] == 0)) {
-      result += arr[i] + separator;
+  result = ""; 
+  i=0;
+  while (i < range.length) {
+    if ((range[i] != 0) && (cond[i] == 0)) {
+      result += range[i] + separator;
     }
-    
     i++;
   }
-  
   return result;
-  
 }
