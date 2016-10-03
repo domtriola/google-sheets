@@ -10,12 +10,11 @@
  */
 
 function joinIf(range, separator, cond) {
-  result = ""; 
+  result = "";
   i=0;
   while (i < range.length) {
-    if ((range[i] != 0) && (cond[i] == 0)) {
+    if ((range[i] != 0) && (cond[i] == 0))
       result += range[i] + separator;
-    }
     i++;
   }
   return result;
