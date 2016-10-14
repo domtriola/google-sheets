@@ -11,6 +11,6 @@ function countInRange(itemToCount, range) {
   if (itemToCount == 0)
     return 0;
   return range.reduce(function(count, cell) {
-    return cell == itemToCount ? count += 1 : count;
+    return cell == itemToCount ? count + 1 : count;
   }, 0);
 }

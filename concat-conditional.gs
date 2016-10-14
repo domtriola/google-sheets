@@ -4,18 +4,14 @@
  *
  * @param {range} input The range to concatenate.
  * @param {separator} input The separator to be used.
- * @param {cond} input A range that should return 0 to return a corresponding item in the range
+ * @param {condRange} input A range that should return 0 to return a corresponding item in the range
  * @return The range with a separator.
  * @customfunction
  */
 
-function joinIf(range, separator, cond) {
-  result = "";
-  i=0;
-  while (i < range.length) {
-    if ((range[i] != 0) && (cond[i] == 0))
-      result += range[i] + separator;
-    i++;
-  }
-  return result;
+function joinIf(range, separator, condRange) {
+  var result = range.reduce(function(list, item, index) {
+    return ((item != 0) && (condRange[index] == 0)) ? list + item + separator: list;
+  }, "");
+  return result.slice(0, result.length - separator.length);
 }
